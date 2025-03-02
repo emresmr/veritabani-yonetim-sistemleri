@@ -1,9 +1,9 @@
 1.soru
-ÜrünID	 ÜrünAdı	Fiyat	  StokMiktarı	 Kategori
-1	       Laptop	  5500	  10	         Elektronik
-2	       Telefon	3000   	25	         Elektronik
-3	       T-shirt	150	    50	         Giyim
-4	       Kitap	  100    	100	         Eğitim
+ÜrünID    ÜrünAdı   Fiyat   StokMiktarı   Kategori
+1         Laptop    25000   10            Elektronik
+2         Telefon   20000   25            Elektronik
+3         T-shirt   1500    50            Giyim
+4         Kitap     400     100           Eğitim
 Açıklama:
 ÜrünID: Her ürün için benzersiz bir kimlik numarası. Bu sütun birincil anahtar (primary key) olarak kullanılır.
 ÜrünAdı: Ürünün adı.
