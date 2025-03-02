@@ -1,0 +1,93 @@
+1.soru
+ÜrünID	 ÜrünAdı	Fiyat	  StokMiktarı	 Kategori
+1	       Laptop	  5500	  10	         Elektronik
+2	       Telefon	3000   	25	         Elektronik
+3	       T-shirt	150	    50	         Giyim
+4	       Kitap	  100    	100	         Eğitim
+Açıklama:
+ÜrünID: Her ürün için benzersiz bir kimlik numarası. Bu sütun birincil anahtar (primary key) olarak kullanılır.
+ÜrünAdı: Ürünün adı.
+Fiyat: Ürünün satış fiyatı (para birimi olarak belirli bir format kullanılabilir, burada sayı olarak yazılmıştır).
+StokMiktarı: Ürünün mevcut stok miktarı.
+Kategori: Ürünün ait olduğu kategori (örneğin, Elektronik, Giyim, Eğitim vb.).
+
+2.soru : 
+Benzerlikler:
+- Bilgi depolamak için kullanılırlar: Her iki sistem de verileri saklamak ve gerektiğinde erişmek için kullanılır.
+- Dosyalar içerir: Geleneksel dosyalama sistemlerinde kağıt veya dijital dosyalar bulunur. VTYS de verileri tablolar halinde saklar.
+- Erişim yapılabilir: Kullanıcılar her iki sistemde de verilere ulaşabilir ve güncelleyebilir.
+
+Farklar:
+-Dosyalama Sistemi: Bilgiler ayrı ayrı dosyalarda saklanır.
+-VTYS: Bilgiler düzenli bir şekilde saklanır.
+-Dosyalama Sistemi: Aynı veri farklı dosyalarda tekrar edebilir.
+-VTYS: Veri tekrarı önlenir.
+-Dosyalama Sistemi: Büyük verilerde yavaş çalışır.
+-VTYS: Daha hızlıdır.
+-Dosyalama Sistemi: Güvenlik manuel yapılır.
+-VTYS: Şifreleme ve yetkilendirme vardır.
+
+3.soru :
+Veriler karışmaz düzenli saklanır.
+Büyük miktarda veriyi hızlı işler.
+Şifreleme ve yetkilendirme ile korunur.
+Birden fazla kişi aynı anda çalışabilir.
+Veriler her zaman doğru ve tutarlıdır.
+
+4.soru
+Veritabanı bilgileri düzenli bir şekilde saklayan yöneten ve gerektiğinde hızlıca erişilmesini sağlayan bir sistemdir.
+Büyük miktarda veriyi güvenli bir şekilde sakladığı için bankalar hastaneler e-ticaret siteleri ve okullar gibi birçok alanda kullanılır. 
+Örneğin bir banka müşteri bilgilerini ve hesap hareketlerini veritabanında saklarken
+bir e-ticaret sitesi ürün stoklarını ve siparişleri yönetmek için veritabanı kullanır.
+
+5.soru
+Tablo: Veritabanında verilerin saklandığı yapıdır. Tablolar satır ve sütunlardan oluşur ve belirli bir konuya ait verileri içerir. Örneğin Kullanıcılar adlı bir tablo sistemdeki kullanıcı bilgilerini saklayabilir.
+Satır: Bir tablodaki her bir veri kaydını temsil eder. Örneğin Kullanıcılar tablosunda her satır bir kullanıcının bilgilerini içerir (Ad Soyad E-posta gibi).
+Sütun: Aynı türdeki verileri saklayan dikey alanlardır. Her sütun bir veri türünü temsil eder ve her satırda o sütuna ait bir değer bulunur. Örneğin E-posta sütunu her kullanıcının e-posta adresini saklar.
+
+6.soru
+Birincil Anahtar (Primary Key): Bir tablodaki her satırı benzersiz şekilde tanımlayan sütundur. Birincil anahtar değeri her kayıtta farklı olmalıdır ve asla boş olamaz. Örneğin bir Kullanıcılar tablosunda KullanıcıID birincil anahtar olabilir.
+Yabancı Anahtar (Foreign Key): Bir tablodaki bir sütunun başka bir tablodaki birincil anahtara referans verdiği sütundur.
+Yabancı anahtar tablolar arasında ilişki kurar. Örneğin Siparişler tablosundaki KullanıcıID sütunu Kullanıcılar tablosundaki KullanıcıID birincil anahtarına yabancı anahtar olabilir.
+Farklılıklar
+Birincil anahtar her kaydı benzersiz tanımlar; yabancı anahtar ise başka bir tablodaki kayda referans verir.
+Birincil anahtar yalnızca bir tabloda olur yabancı anahtar ise başka bir tablodan veri alabilir
+
+7.soru
+Veritabanı Yöneticisi: Veritabanının yönetimi, bakımı ve güvenliğinden sorumludur. Yeni veritabanları oluşturur, izinleri ayarlar ve sistemin düzgün çalışmasını sağlar.
+Kullanıcılar: Veritabanına veri ekleyip verileri sorgulayan kişilerdir. Genellikle sistemdeki verileri görmek, eklemek veya güncellemek için belirli izinlere sahiptirler.
+Uygulama Programcıları: Veritabanı ile etkileşimde bulunan yazılımlar geliştiren kişilerdir. Bu kişiler, veritabanına veri ekleyip sorgu göndererek programların veritabanı ile çalışmasını sağlar.
+
+8.soru
+
+kullanıcı adı       rol                       yetkiler      
+mahmut              -veritabanı yöneticisi    Tüm veritabanı yönetimi, kullanıcı ekleme, silme
+
+ali                 kullanıcı                 Ürün listeleme, sipariş verme
+
+ayşe                kullanıcı                 Ürün listeleme, sipariş verme
+
+fatma               uygulama programcısı      Veri ekleme, veritabanı sorguları çalıştırma
+
+9.soru
+Veritabanı: Verilerin düzenli bir şekilde saklandığı bir yapıdır. İçinde tablo satır sütun gibi öğeler bulunur ve veriler burada depolanır. Örneğin bir okul veritabanı öğrenci bilgilerini tutan bir veri koleksiyonudur.
+VTYS (Veritabanı Yönetim Sistemi): Veritabanlarını yönetmek için kullanılan yazılımdır. Verilerin güvenliğini sağlar veritabanı ile ilgili sorgular yapmayı kolaylaştırır yedek alır ve kullanıcıların verilere erişimini kontrol eder. 
+Örneğin, MySQL, PostgreSQL gibi yazılımlar birer VTYS'dir.
+Fark:
+Veritabanı, verilerin saklandığı yerdir, VTYS ise bu verilerin yönetilmesini sağlayan yazılımdır.
+Veritabanı sadece veriyi içerirken, VTYS veriyi düzenler, sorgular ve işler.
+
+10.soru
+Bir veritabanında iki tablo düşünelim. İlk tablodaki bir veriyi ikinci tablodaki verilerle kullanarak aralarında bir bağlantı kurarsak, bu iki tabloyu ilişkilendirmiş oluruz.
+İşte bu bağlantıyı kurmak, ilişkisel veri modelini oluşturur. Bu model, verilerin düzenli bir şekilde saklanmasını ve birbirleriyle ilişkili olmasını sağlar.
+
+11.soru
+Öğrenci Bilgi Sistemi için üç ana tabloya ihtiyacımız var:
+
+Öğrenciler Tablosu: Öğrencinin adı, soyadı ve diğer bilgileri burada saklanır.
+Dersler Tablosu: Derslerin adı, kredisi gibi bilgiler burada tutulur.
+Notlar Tablosu: Öğrencilerin derslerden aldıkları notlar burada saklanır.
+İlişkiler:
+
+Öğrenciler ve Notlar tablosu birbirine ÖğrenciID ile bağlanır. Yani her öğrenciye ait notlar Notlar tablosunda bulunur.
+Dersler ve Notlar tablosu ise DersID ile bağlanır. Her dersin notları Notlar tablosunda yer alır.
