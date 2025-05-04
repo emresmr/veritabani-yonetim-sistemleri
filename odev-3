@@ -1,0 +1,49 @@
+1-SELECT DISTINCT Müsteri.Madi, Müsteri.Msoyadi
+FROM Müsteri
+INNER JOIN Satis ON Müsteri.Mno = Satis.Mno;
+
+2-SELECT Müsteri.Madi, Müsteri.Msoyadi, Arac.Marka, Arac.Model
+FROM Alim
+JOIN Müsteri ON Alim.Mno = Müsteri.Mno
+JOIN Arac ON Alim.Aracno = Arac.Aracno
+
+3-SELECT Müsteri.Madi, Müsteri.Msoyadi, COUNT(Alim.Aracno) AS Alinan_Arac_Sayisi
+FROM Alim
+JOIN Müsteri ON Alim.Mno = Müsteri.Mno
+GROUP BY Müsteri.Madi, Müsteri.Msoyadi
+
+4-SELECT DISTINCT Arac.Marka, Arac.Model
+FROM Arac
+JOIN Satis ON Arac.Aracno = Satis.Aracno;
+
+5-SELECT 
+  (SELECT SUM(Sfiyat) FROM Satis) AS Toplam_Satis_Tutari
+  (SELECT SUM(Afiyat) FROM Alim) AS Toplam_Alim_Tutari
+  (SELECT SUM(Sfiyat) FROM Satis) - (SELECT SUM(Afiyat) FROM Alim) AS Fark;
+
+6-SELECT Marka, Model
+FROM Arac
+WHERE Aracno NOT IN (SELECT Aracno FROM Satis);
+
+7-SELECT Arac.Marka, Arac.Model, AVG(Satis.Sfiyat) AS Ortalama_Satis_Fiyati
+FROM Satis
+JOIN Arac ON Satis.Aracno = Arac.Aracno
+GROUP BY Arac.Marka, Arac.Model;
+
+8-SELECT Arac.Marka, Arac.Model,
+       (SELECT COUNT(*) FROM Alim WHERE Alim.Aracno = Arac.Aracno) AS Alim_Sayisi
+       (SELECT COUNT(*) FROM Satis WHERE Satis.Aracno = Arac.Aracno) AS Satis_Sayisi
+
+
+9-SELECT Müsteri.Madi, Müsteri.Msoyadi, Arac.Marka, Arac.Model, Satis.Sfiyat
+FROM Satis
+JOIN Müsteri ON Satis.Mno = Müsteri.Mno
+JOIN Arac ON Satis.Aracno = Arac.Aracno
+WHERE Satis.Sfiyat > 20000;
+
+
+10-SELECT DISTINCT Arac.Marka, Arac.Model
+FROM Satis
+JOIN Müsteri ON Satis.Mno = Müsteri.Mno
+JOIN Arac ON Satis.Aracno = Arac.Aracno
+WHERE Müsteri.Madres LIKE '%Tokat%';
