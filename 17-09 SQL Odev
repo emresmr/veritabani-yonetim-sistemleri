@@ -1,0 +1,191 @@
+form1
+using System;
+using System.Data;
+using System.Data.SqlClient;
+using System.Windows.Forms;
+using System.Configuration;
+
+namespace WinFormsApp3
+{
+    public partial class Form2 : Form
+    {
+        private string cs = "Server=(localdb)\\MSSQLLocalDB;Database=Mahmut_kutuphane;Trusted_Connection=True;";
+
+        public Form2()
+        {
+            InitializeComponent();
+
+            // Eventleri butonlara bağlıyoruz
+            btnKitaplar.Click += (s, e) => LoadTable("kitaplar");
+            btnUyeler.Click += (s, e) => LoadTable("uyeler");
+            btnAdresler.Click += (s, e) => LoadTable("adresler");
+            btnKutuphane.Click += (s, e) => LoadTable("kutuphane");
+        }
+
+        private void LoadTable(string tableName)
+        {
+            try
+            {
+
+                {
+                    var dt = new DataTable();
+
+                    dataGridView1.DataSource = dt;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Hata: " + ex.Message);
+            }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void Form2_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnKitaplar_Click(object sender, EventArgs e)
+        {
+            btnKitaplar.Click += (s, e) => LoadTable("kitaplar");
+        }
+    }
+}
+Form1 desiginer 
+namespace WinFormsApp3
+{
+    partial class Form2
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            dataGridView1 = new DataGridView();
+            btnKitaplar = new Button();
+            btnUyeler = new Button();
+            btnAdresler = new Button();
+            btnKutuphane = new Button();
+            panel1 = new Panel();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            panel1.SuspendLayout();
+            SuspendLayout();
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Dock = DockStyle.Fill;
+            dataGridView1.Location = new Point(0, 38);
+            dataGridView1.Margin = new Padding(3, 2, 3, 2);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowHeadersWidth = 51;
+            dataGridView1.RowTemplate.Height = 29;
+            dataGridView1.Size = new Size(1082, 688);
+            dataGridView1.TabIndex = 0;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            // 
+            // btnKitaplar
+            // 
+            btnKitaplar.Location = new Point(9, 8);
+            btnKitaplar.Margin = new Padding(3, 2, 3, 2);
+            btnKitaplar.Name = "btnKitaplar";
+            btnKitaplar.Size = new Size(79, 22);
+            btnKitaplar.TabIndex = 1;
+            btnKitaplar.Text = "Kitaplar";
+            btnKitaplar.UseVisualStyleBackColor = true;
+            btnKitaplar.Click += btnKitaplar_Click;
+            // 
+            // btnUyeler
+            // 
+            btnUyeler.Location = new Point(96, 8);
+            btnUyeler.Margin = new Padding(3, 2, 3, 2);
+            btnUyeler.Name = "btnUyeler";
+            btnUyeler.Size = new Size(79, 22);
+            btnUyeler.TabIndex = 2;
+            btnUyeler.Text = "Üyeler";
+            btnUyeler.UseVisualStyleBackColor = true;
+            // 
+            // btnAdresler
+            // 
+            btnAdresler.Location = new Point(184, 8);
+            btnAdresler.Margin = new Padding(3, 2, 3, 2);
+            btnAdresler.Name = "btnAdresler";
+            btnAdresler.Size = new Size(79, 22);
+            btnAdresler.TabIndex = 3;
+            btnAdresler.Text = "Adresler";
+            btnAdresler.UseVisualStyleBackColor = true;
+            // 
+            // btnKutuphane
+            // 
+            btnKutuphane.Location = new Point(271, 8);
+            btnKutuphane.Margin = new Padding(3, 2, 3, 2);
+            btnKutuphane.Name = "btnKutuphane";
+            btnKutuphane.Size = new Size(88, 22);
+            btnKutuphane.TabIndex = 4;
+            btnKutuphane.Text = "Kütüphane";
+            btnKutuphane.UseVisualStyleBackColor = true;
+            // 
+            // panel1
+            // 
+            panel1.Controls.Add(btnKitaplar);
+            panel1.Controls.Add(btnUyeler);
+            panel1.Controls.Add(btnAdresler);
+            panel1.Controls.Add(btnKutuphane);
+            panel1.Dock = DockStyle.Top;
+            panel1.Location = new Point(0, 0);
+            panel1.Margin = new Padding(3, 2, 3, 2);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1082, 38);
+            panel1.TabIndex = 5;
+            // 
+            // Form2
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(1082, 726);
+            Controls.Add(dataGridView1);
+            Controls.Add(panel1);
+            Margin = new Padding(3, 2, 3, 2);
+            Name = "Form2";
+            Text = "Mahmut Kütüphane";
+            Load += Form2_Load;
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            panel1.ResumeLayout(false);
+            ResumeLayout(false);
+        }
+
+        #endregion
+
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button btnKitaplar;
+        private System.Windows.Forms.Button btnUyeler;
+        private System.Windows.Forms.Button btnAdresler;
+        private System.Windows.Forms.Button btnKutuphane;
+        private System.Windows.Forms.Panel panel1;
+    }
+}
